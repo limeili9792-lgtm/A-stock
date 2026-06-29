@@ -79,6 +79,8 @@ version: 1.0
 
 ### 2.1 收入结构
 
+> 数据源：`references/extract_annual_report.py` → `extract_section(code, year, "revenue_breakdown")`，自动 pdfplumber 提取 → 评分<70 时 Vision 回退。也可用 WebSearch 兜底。
+
 ```
 | 业务板块 | 营收占比 | 毛利率 | 利润贡献占比 | 同比变化 | 备注 |
 ```
