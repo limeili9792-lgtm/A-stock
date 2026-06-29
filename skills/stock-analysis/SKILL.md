@@ -59,12 +59,12 @@ version: 1.0
 
 ### 1.2 定量筛选 + 杜邦拆解
 
-拉取：营收、毛利率、ROE、利润增速、净利率。
+> 数据源：`references/akshare_utils.py` → `get_financial_summary(ts_code)` 一键提取
+> 兜底：WebSearch 搜年报/季报
 
 **⚠️ ROE必做杜邦拆解：**
-- 权益乘数 = 总资产 / 归母净资产
+- 权益乘数 = 1 / (1 - 资产负债率)
 - ROA = ROE / 权益乘数
-- 资产周转率 = 营收 / 总资产
 - 交叉验证：ROE ≈ 净利率 × 周转率 × 权益乘数
 
 横向对比ROA/净利率/周转率/权益乘数。**结论基于ROA而非ROE。**
@@ -177,11 +177,12 @@ version: 1.0
 
 | 数据源 | 职责 | 置信度 |
 |:---|:---|:---:|
-| 中证CSV (`references/中证行业分类.csv`（随技能打包，覆盖5512只A股，四级分类链路）) | 行业分类链，覆盖5512只，四级：一11→二35→三94→四250 | 高 |
+| 中证CSV（`references/中证行业分类.csv`，随技能打包） | 行业分类链，覆盖5512只，四级：一11→二35→三94→四250 | 高 |
+| AKShare `stock_financial_abstract_ths`（`references/akshare_utils.py`） | **杜邦拆解主源**：ROE/净利率/毛利率/负债率/营收/CFO，季度频率 | 高 |
 | Tushare free (daily/daily_basic) | 行情/市值/PE | 高 |
-| AKShare → 同花顺 | ROE/毛利率/负债率/营收 | 中高 |
+| AKShare `stock_zh_index_daily` | 大盘指数行情 | 高 |
 | 年报PDF (extract_section) | 分业务收入/客户集中度/担保质押/存货应收 | 中高 |
-| WebSearch | 补充财务数据、行业信息 | 中 |
+| WebSearch | 行业信息、资金面、龙虎榜、补充财务数据 | 中 |
 
 ---
 

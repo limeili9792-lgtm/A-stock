@@ -52,8 +52,8 @@ cp -r skills/* /your-project/.claude/skills/
 ### 依赖
 
 - **tushare**: Python 3.7+, `tushare` 包, `TUSHARE_TOKEN` 环境变量（[注册获取](https://tushare.pro/register)）
-- **stock-analysis**: 无额外依赖，中证行业分类CSV已随技能打包在 `references/` 中
-- **stock-trading**: 无额外依赖
+- **stock-analysis**: Python 3.7+, `akshare` 包。中证行业分类CSV已随技能打包在 `references/` 中
+- **stock-trading**: 无额外依赖，大盘环境判断复用 `stock-analysis/references/akshare_utils.py`
 
 ## 设计原则
 
