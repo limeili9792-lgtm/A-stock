@@ -14,13 +14,13 @@
 
 ```
 用户提问
-  ├─ "分析下兆易创新" → stock-analysis（基本面三层递进）
+  ├─ "分析下XX" → stock-analysis（三层递进基本面）
   │    └─ 需要数据 → tushare（行情/财务/估值）
-  │    └─ "还能拿吗" → stock-trading（技术面/资金面/盈亏比）
+  │    └─ "还能拿吗" → stock-trading（技术面/资金面）
   │
-  ├─ "中天科技交易分析" → stock-trading（纯交易面）
+  ├─ "XX交易分析" → stock-trading（纯交易面）
   │
-  └─ "拉一下半导体设备板块PE" → tushare（纯数据）
+  └─ "拉板块数据/查行情/导报表" → tushare（纯数据）
 ```
 
 ## 安装
