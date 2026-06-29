@@ -59,7 +59,7 @@ version: 1.0
 
 ### 1.2 定量筛选 + 杜邦拆解
 
-> 数据源：`references/akshare_utils.py` → `get_financial_summary(ts_code)` 一键提取
+> 数据源：`scripts/akshare_utils.py` → `get_financial_summary(ts_code)` 一键提取
 > 兜底：WebSearch 搜年报/季报
 
 **⚠️ ROE必做杜邦拆解：**
@@ -79,7 +79,7 @@ version: 1.0
 
 ### 2.1 收入结构
 
-> 数据源：`references/extract_annual_report.py` → `extract_section(code, year, "revenue_breakdown")`，自动 pdfplumber 提取 → 评分<70 时 Vision 回退。也可用 WebSearch 兜底。
+> 数据源：`scripts/extract_annual_report.py` → `extract_section(code, year, "revenue_breakdown")`，自动 pdfplumber 提取 → 评分<70 时 Vision 回退。也可用 WebSearch 兜底。
 
 ```
 | 业务板块 | 营收占比 | 毛利率 | 利润贡献占比 | 同比变化 | 备注 |
@@ -180,7 +180,7 @@ version: 1.0
 | 数据源 | 职责 | 置信度 |
 |:---|:---|:---:|
 | 中证CSV（`references/中证行业分类.csv`，随技能打包） | 行业分类链，覆盖5512只，四级：一11→二35→三94→四250 | 高 |
-| AKShare `stock_financial_abstract_ths`（`references/akshare_utils.py`） | **杜邦拆解主源**：ROE/净利率/毛利率/负债率/营收/CFO，季度频率 | 高 |
+| AKShare `stock_financial_abstract_ths`（`scripts/akshare_utils.py`） | **杜邦拆解主源**：ROE/净利率/毛利率/负债率/营收/CFO，季度频率 | 高 |
 | Tushare free (daily/daily_basic) | 行情/市值/PE | 高 |
 | AKShare `stock_zh_index_daily` | 大盘指数行情 | 高 |
 | 年报PDF (extract_section) | 分业务收入/客户集中度/担保质押/存货应收 | 中高 |
