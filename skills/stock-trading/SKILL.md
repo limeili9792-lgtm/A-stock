@@ -33,7 +33,7 @@ version: 1.0
 | 震荡 | 价格在MA20±3%内反复 | 半仓 | 只做回调买入 |
 | 向下 | 指数MA20向下且价格在MA20下方 | 1/3仓 | 不追涨，不开新仓 |
 
-用上证指数和创业板指综合判断。数据源：`../stock-analysis/scripts/akshare_utils.py` → `get_index_status()`。
+用上证指数和创业板指综合判断。数据源：`../scripts/akshare_utils.py` → `get_index_status()`。
 >
 > **数据引用规则**：以 `../../references/数据字典.md` 第二节为唯一索引，优先主源→兜底，数据不足标注不做结论。
 
